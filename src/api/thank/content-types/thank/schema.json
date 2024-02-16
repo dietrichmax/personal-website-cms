@@ -4,10 +4,11 @@
   "info": {
     "singularName": "thank",
     "pluralName": "thanks",
-    "displayName": "thank"
+    "displayName": "thank",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

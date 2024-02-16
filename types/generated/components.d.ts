@@ -6,7 +6,12 @@ export interface CvEducation extends Schema.Component {
     displayName: 'education';
     description: '';
   };
-  attributes: {};
+  attributes: {
+    type: Attribute.String;
+    location: Attribute.String;
+    date: Attribute.String;
+    description: Attribute.Text;
+  };
 }
 
 export interface CvInterests extends Schema.Component {
@@ -15,7 +20,21 @@ export interface CvInterests extends Schema.Component {
     displayName: 'interests';
     description: '';
   };
-  attributes: {};
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.String;
+  };
+}
+
+export interface CvSkillName extends Schema.Component {
+  collectionName: 'components_skill_name_skill_names';
+  info: {
+    displayName: 'skillName';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+  };
 }
 
 export interface CvSkills extends Schema.Component {
@@ -24,7 +43,10 @@ export interface CvSkills extends Schema.Component {
     displayName: 'skills';
     description: '';
   };
-  attributes: {};
+  attributes: {
+    skillName: Attribute.Component<'cv.skill-name', true>;
+    name: Attribute.String;
+  };
 }
 
 export interface CvTimeline extends Schema.Component {
@@ -33,7 +55,18 @@ export interface CvTimeline extends Schema.Component {
     displayName: 'timeline';
     description: '';
   };
-  attributes: {};
+  attributes: {
+    role: Attribute.String;
+    company: Attribute.String;
+    location: Attribute.String;
+    description: Attribute.Text;
+    longDescription: Attribute.RichText;
+    tags: Attribute.String;
+    url: Attribute.String;
+    startDate: Attribute.Date;
+    endDate: Attribute.Date;
+    logo: Attribute.Media;
+  };
 }
 
 export interface SharedMetaSocial extends Schema.Component {
@@ -116,6 +149,7 @@ declare module '@strapi/types' {
     export interface Components {
       'cv.education': CvEducation;
       'cv.interests': CvInterests;
+      'cv.skill-name': CvSkillName;
       'cv.skills': CvSkills;
       'cv.timeline': CvTimeline;
       'shared.meta-social': SharedMetaSocial;

@@ -5,5 +5,43 @@
     "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "role": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "longDescription": {
+      "type": "richtext"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
 }

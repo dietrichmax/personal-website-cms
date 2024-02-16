@@ -5,5 +5,18 @@
     "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
 }

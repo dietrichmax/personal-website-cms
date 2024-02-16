@@ -5,5 +5,15 @@
     "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "skillName": {
+      "displayName": "skillName",
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.skill-name"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
 }

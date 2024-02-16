@@ -5,5 +5,12 @@
     "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
 }

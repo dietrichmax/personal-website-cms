@@ -903,9 +903,10 @@ export interface ApiCvCv extends Schema.SingleType {
     singularName: 'cv';
     pluralName: 'cvs';
     displayName: 'CV';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     title: Attribute.String;
@@ -917,7 +918,6 @@ export interface ApiCvCv extends Schema.SingleType {
     interests: Attribute.Component<'cv.interests', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::cv.cv', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::cv.cv', 'oneToOne', 'admin::user'> &
@@ -1245,15 +1245,15 @@ export interface ApiThankThank extends Schema.SingleType {
     singularName: 'thank';
     pluralName: 'thanks';
     displayName: 'thank';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     thanks: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::thank.thank',
       'oneToOne',
