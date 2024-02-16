@@ -91,6 +91,16 @@
       "relation": "oneToMany",
       "target": "api::page.page",
       "mappedBy": "users_permissions_user"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

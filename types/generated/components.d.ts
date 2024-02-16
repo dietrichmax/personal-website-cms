@@ -94,7 +94,7 @@ export interface SocialsSocials extends Schema.Component {
     description: '';
   };
   attributes: {
-    name: Attribute.String;
+    name: Attribute.Enumeration<['Linkedin', 'GitHub', 'Twitter', 'Instagram']>;
     link: Attribute.String;
   };
 }
