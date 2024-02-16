@@ -1150,16 +1150,16 @@ export interface ApiSubscriberSubscriber extends Schema.CollectionType {
     singularName: 'subscriber';
     pluralName: 'subscribers';
     displayName: 'Subscriber';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     email: Attribute.Email;
     name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::subscriber.subscriber',
       'oneToOne',
