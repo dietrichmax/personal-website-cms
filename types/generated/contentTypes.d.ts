@@ -897,6 +897,39 @@ export interface ApiActivityActivity extends Schema.CollectionType {
   };
 }
 
+export interface ApiCommentComment extends Schema.CollectionType {
+  collectionName: 'comments';
+  info: {
+    singularName: 'comment';
+    pluralName: 'comments';
+    displayName: 'Comment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.String;
+    name: Attribute.String;
+    email: Attribute.Email;
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::comment.comment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::comment.comment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCvCv extends Schema.SingleType {
   collectionName: 'cvs';
   info: {
@@ -1289,6 +1322,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::activity.activity': ApiActivityActivity;
+      'api::comment.comment': ApiCommentComment;
       'api::cv.cv': ApiCvCv;
       'api::link.link': ApiLinkLink;
       'api::page.page': ApiPagePage;
