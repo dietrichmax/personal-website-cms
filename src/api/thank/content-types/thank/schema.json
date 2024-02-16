@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "thanks",
+  "info": {
+    "singularName": "thank",
+    "pluralName": "thanks",
+    "displayName": "thank"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thanks": {
+      "type": "integer"
+    }
+  }
+}

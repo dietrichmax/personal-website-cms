@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_syndication_links_syndication_links",
+  "info": {
+    "displayName": "syndicationLinks",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

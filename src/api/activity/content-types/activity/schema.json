@@ -1,0 +1,111 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "singularName": "activity",
+    "pluralName": "activities",
+    "displayName": "Activity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "activityId": {
+      "type": "integer"
+    },
+    "activityName": {
+      "type": "string"
+    },
+    "distance": {
+      "type": "decimal"
+    },
+    "duration": {
+      "type": "decimal"
+    },
+    "elapsedDuration": {
+      "type": "decimal"
+    },
+    "movingDuration": {
+      "type": "decimal"
+    },
+    "elevationGain": {
+      "type": "integer"
+    },
+    "elevationLoss": {
+      "type": "integer"
+    },
+    "averageSpeed": {
+      "type": "decimal"
+    },
+    "maxSpeed": {
+      "type": "decimal"
+    },
+    "startLatitude": {
+      "type": "float"
+    },
+    "startLongitude": {
+      "type": "float"
+    },
+    "endLatitude": {
+      "type": "float"
+    },
+    "endLongitude": {
+      "type": "float"
+    },
+    "details": {
+      "type": "json"
+    },
+    "temperature": {
+      "type": "decimal"
+    },
+    "weatherDescription": {
+      "type": "string"
+    },
+    "weather_icon": {
+      "type": "string"
+    },
+    "weather_main": {
+      "type": "string"
+    },
+    "minElevation": {
+      "type": "integer"
+    },
+    "maxElevation": {
+      "type": "integer"
+    },
+    "sportTypeId": {
+      "type": "integer"
+    },
+    "grit": {
+      "type": "decimal"
+    },
+    "flow": {
+      "type": "decimal"
+    },
+    "jumpCount": {
+      "type": "integer"
+    },
+    "achievement_count": {
+      "type": "integer"
+    },
+    "kudos_count": {
+      "type": "integer"
+    },
+    "comment_count": {
+      "type": "integer"
+    },
+    "athlete_count": {
+      "type": "integer"
+    },
+    "average_watts": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "datetime"
+    }
+  }
+}

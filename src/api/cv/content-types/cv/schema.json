@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "cvs",
+  "info": {
+    "singularName": "cv",
+    "pluralName": "cvs",
+    "displayName": "CV"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "smallBio": {
+      "type": "text"
+    },
+    "skills": {
+      "displayName": "skills",
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.skills"
+    },
+    "education": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.education"
+    },
+    "timeline": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.timeline"
+    },
+    "interests": {
+      "displayName": "interests",
+      "type": "component",
+      "repeatable": true,
+      "component": "cv.interests"
+    }
+  }
+}
