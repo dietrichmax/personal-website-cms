@@ -22,12 +22,6 @@
       "required": true,
       "minLength": 20
     },
-    "color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color",
-      "required": false
-    },
     "slug": {
       "type": "uid",
       "targetField": "name",
@@ -50,6 +44,9 @@
       "relation": "manyToMany",
       "target": "api::link.link",
       "mappedBy": "tags"
+    },
+    "color": {
+      "type": "string"
     }
   }
 }
