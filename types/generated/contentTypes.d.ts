@@ -768,22 +768,27 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     bio: Attribute.Text;
     socials: Attribute.Component<'socials.socials', true>;
-    posts: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::post.post'
-    >;
-    photos: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::photo.photo'
-    >;
     pages: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
       'api::page.page'
     >;
     image: Attribute.Media;
+    links: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::link.link'
+    >;
+    photos: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::photo.photo'
+    >;
+    posts: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::post.post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -975,6 +980,11 @@ export interface ApiLinkLink extends Schema.CollectionType {
     description: Attribute.Text;
     slug: Attribute.UID<'api::link.link', 'title'>;
     tags: Attribute.Relation<'api::link.link', 'manyToMany', 'api::tag.tag'>;
+    author: Attribute.Relation<
+      'api::link.link',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1063,7 +1073,7 @@ export interface ApiPhotoPhoto extends Schema.CollectionType {
       true
     >;
     tags: Attribute.Relation<'api::photo.photo', 'manyToMany', 'api::tag.tag'>;
-    users_permissions_user: Attribute.Relation<
+    author: Attribute.Relation<
       'api::photo.photo',
       'manyToOne',
       'plugin::users-permissions.user'
@@ -1156,7 +1166,7 @@ export interface ApiPostPost extends Schema.CollectionType {
         };
       }>;
     tags: Attribute.Relation<'api::post.post', 'manyToMany', 'api::tag.tag'>;
-    users_permissions_user: Attribute.Relation<
+    author: Attribute.Relation<
       'api::post.post',
       'manyToOne',
       'plugin::users-permissions.user'
@@ -1174,6 +1184,41 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::post.post'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'Product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    color: Attribute.Enumeration<['black', 'white']>;
+    size: Attribute.Enumeration<['small', 'medium', 'large']>;
+    price: Attribute.Decimal;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -1328,6 +1373,7 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::photo.photo': ApiPhotoPhoto;
       'api::post.post': ApiPostPost;
+      'api::product.product': ApiProductProduct;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
       'api::tag.tag': ApiTagTag;
       'api::thank.thank': ApiThankThank;

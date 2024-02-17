@@ -74,18 +74,6 @@
       "repeatable": true,
       "component": "socials.socials"
     },
-    "posts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::post.post",
-      "mappedBy": "users_permissions_user"
-    },
-    "photos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::photo.photo",
-      "mappedBy": "users_permissions_user"
-    },
     "pages": {
       "type": "relation",
       "relation": "oneToMany",
@@ -101,6 +89,24 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link.link",
+      "mappedBy": "author"
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "author"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "author"
     }
   }
 }

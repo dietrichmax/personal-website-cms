@@ -30,6 +30,12 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "inversedBy": "links"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "links"
     }
   }
 }
