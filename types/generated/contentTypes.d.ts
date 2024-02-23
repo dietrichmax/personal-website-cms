@@ -852,12 +852,13 @@ export interface ApiActivityActivity extends Schema.CollectionType {
     singularName: 'activity';
     pluralName: 'activities';
     displayName: 'Activity';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    activityId: Attribute.Integer;
+    activityId: Attribute.BigInteger;
     activityName: Attribute.String;
     distance: Attribute.Decimal;
     duration: Attribute.Decimal;
