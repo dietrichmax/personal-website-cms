@@ -855,7 +855,7 @@ export interface ApiActivityActivity extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     activityId: Attribute.BigInteger;
@@ -864,8 +864,8 @@ export interface ApiActivityActivity extends Schema.CollectionType {
     duration: Attribute.Decimal;
     elapsedDuration: Attribute.Decimal;
     movingDuration: Attribute.Decimal;
-    elevationGain: Attribute.Integer;
-    elevationLoss: Attribute.Integer;
+    elevationGain: Attribute.Decimal;
+    elevationLoss: Attribute.Decimal;
     averageSpeed: Attribute.Decimal;
     maxSpeed: Attribute.Decimal;
     startLatitude: Attribute.Float;
@@ -877,8 +877,8 @@ export interface ApiActivityActivity extends Schema.CollectionType {
     weatherDescription: Attribute.String;
     weather_icon: Attribute.String;
     weather_main: Attribute.String;
-    minElevation: Attribute.Integer;
-    maxElevation: Attribute.Integer;
+    minElevation: Attribute.Decimal;
+    maxElevation: Attribute.Decimal;
     sportTypeId: Attribute.Integer;
     grit: Attribute.Decimal;
     flow: Attribute.Decimal;
@@ -892,7 +892,6 @@ export interface ApiActivityActivity extends Schema.CollectionType {
     start_date: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::activity.activity',
       'oneToOne',
