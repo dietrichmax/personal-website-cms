@@ -8,14 +8,17 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  graphql: {
-    enabled: true,
+  email: {
     config: {
-      apolloServer: {
-        introspection: true,
+      provider: "sendgrid",
+      providerOptions: {
+        apiKey: env("SENDGRID_API_KEY")
       },
-      playgroundAlways: true,
-    }
+      settings: {
+        defaultFrom: "noreply@mxd.codes",
+        defaultReplyTo: "noreply@mxd.codes",
+      },
+    },
   },
   "strapi-blurhash": {
     enabled: true,
