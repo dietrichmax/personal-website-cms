@@ -19,11 +19,5 @@ module.exports = ({ env }) => ({
         defaultReplyTo: "noreply@mxd.codes",
       },
     },
-  },
-  "strapi-blurhash": {
-    enabled: true,
-    config: {
-      regenerateOnUpdate: true
-    }
-  },
+  }
 });
